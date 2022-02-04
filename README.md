@@ -5,5 +5,7 @@ Initially, the ground stiffness was set to the rigid value of 50 MN/m. Then, aft
 
 The main code is located in "three_D_Dual_SLIP_compliant_sim_MED_2022.m". The rest of the codes are custom made functions that are called during the execution of the code.
 
+test
+
 A video of a simulation for a perturbation of 29kN/m is attached in this folder. 
 ![image](https://user-images.githubusercontent.com/95447396/152492423-1a6bb0a3-4a08-4a52-83d4-1e991d81d78e.png)
