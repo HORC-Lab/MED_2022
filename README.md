@@ -6,6 +6,7 @@ Initially, the ground stiffness was set to the rigid value of 50 MN/m. Then, aft
 The main code is located in "three_D_Dual_SLIP_compliant_sim_MED_2022.m". The rest of the codes are custom made functions that are called during the execution of the code.
 
 For more information please refer to the following paper:
-**[Karakasis, Chrysostomos, Ioannis Poulakakis, and Panagiotis Artemiadis. "Robust Dynamic Walking for a 3D Dual-SLIP Model under One-Step Unilateral Stiffness Perturbations: Towards Bipedal Locomotion over Compliant Terrain." arXiv preprint arXiv:2203.07471 (2022).](https://ieeexplore.ieee.org/abstract/document/9159012)**
+
+**[Karakasis, Chrysostomos, Ioannis Poulakakis, and Panagiotis Artemiadis. "Robust Dynamic Walking for a 3D Dual-SLIP Model under One-Step Unilateral Stiffness Perturbations: Towards Bipedal Locomotion over Compliant Terrain." arXiv preprint arXiv:2203.07471 (2022).](https://arxiv.org/abs/2203.07471)**
 
 ![perturbation_screenshots_90kNm_final](https://user-images.githubusercontent.com/95447396/159397608-f42770cb-daae-45e7-968f-e54667598d74.png)
