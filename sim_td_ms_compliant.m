@@ -180,8 +180,8 @@ y_B_f = y_c_TD-initial_leg_B_length*cos(theta)*sin(phi);
 % stiffness of both legs maintains that same value (k_A), as it was determined by
 % the LQR controller at Midstance.
 if steps == step_disturb                                            % Step where the system steps on the soft terrain
-    k_B = k_A*11;                                                   % Stiffness of the second leg about to step on the soft terrain
-    k_A = k_A*3.5;                                                  % Stiffness of the first leg in support currently walkin on hard terrain
+    k_B = k_A*7.452;                                                   % Stiffness of the second leg about to step on the soft terrain
+    k_A = k_A*3.105;                                                  % Stiffness of the first leg in support currently walkin on hard terrain
 end
 %================================================================================================%
 %================================================================================================%
@@ -534,10 +534,11 @@ while (1)                                                           % Inner loop
     % Moreover, if the size of the vector t_i is greater than the threshold
     % value "size_thld", the simulation should stop, as this indicates that
     % the ode solver takes too much time to run.
-    if ( (~isempty(MS_frames) && isempty(MS_frame) ) || ~isempty((find(sol(:,2)>l_0+thld_l))) || i_i>i_th || size(t_i,1)>size_thld)
+    if ( (~isempty(MS_frames) && isempty(MS_frame) ) || ~isempty((find(sol(:,2)>l_0+thld_l))) || ~isempty((find(sol(:,1)>0))) || i_i>i_th || size(t_i,1)>size_thld)
         break;
     end
 end
+MS_frames = intersect(MS_frames,find(sol(:,1)<=0)); 
 %-------------------------------------------------------------------------%
 if(isempty(MS_frames))                                              % Check whether the condition for the Midstance event was satisfied for any time instant during the iteration
     disp('No Midstance event occured during the simulation. Please pick different initial conditions.');
@@ -581,6 +582,6 @@ x_c_dot_MS = sol(MS_frame,7)*cos( sol(MS_frame,3) )*cos( sol(MS_frame,4) ) +...
 y_c_dot_MS = sol(MS_frame,7)*sin( sol(MS_frame,3) )*cos( sol(MS_frame,4) ) +...
     sol(MS_frame,2)*cos( sol(MS_frame,3) )*sol(MS_frame,8)*cos( sol(MS_frame,4) ) +...
     (-1)*sol(MS_frame,2)*sin( sol(MS_frame,3) )*sin( sol(MS_frame,4) )*sol(MS_frame,9);
-x_slice = [x_c_MS-x_A_f y_c_MS-y_A_f z_c(MS_frame)-sol(MS_frame,1) x_c_dot_MS y_c_dot_MS]';
+x_slice = [x_c_MS-x_A_f y_c_MS-y_A_f z_c(MS_frame) x_c_dot_MS y_c_dot_MS]';
 next = 0;                                                           % Indicate that the simulatin from TD to MS was completed successfully
 end

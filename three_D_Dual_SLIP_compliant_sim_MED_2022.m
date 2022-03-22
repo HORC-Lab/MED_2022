@@ -22,9 +22,12 @@
 % default.
 
 % NOTE:
-% For more information see report "Report for 3D Dual SLIP Model Analysis"
+% For more information please refer to the following paper:
+% 
+Karakasis, Chrysostomos, Ioannis Poulakakis, and Panagiotis Artemiadis. 
+% "Robust Dynamic Walking for a 3D Dual-SLIP Model under One-Step Unilateral Stiffness Perturbations: Towards Bipedal Locomotion over Compliant Terrain." arXiv preprint arXiv:2203.07471 (2022).
 
-% Last Update: 1/30/2022
+% Last Update: 3/22/2022
 
 warning("off")
 clear all;
@@ -53,9 +56,9 @@ x_A_f = 2;                                                      % (m) Initial po
 y_A_f = 1;                                                      % (m) Initial position of supporting leg's foot on the y-axis
 foot_pos_A_B = [x_A_f y_A_f];                                   % Store initial foot position of Leg A (leg in support at t=0)
 %------------------------------------------------------------------------------------------------%
-des_steps = 100;                                                % Set desired number of steps for the simulation of the system
+des_steps = 25;                                                % Set desired number of steps for the simulation of the system
 step_disturb = 10;                                              % (scalar) Step at which the system will experience the stiffness perturbation
-stiff_disturb = 25000;                                          % (N/m) The value at which the ground stiffness will be set to during the perturbation
+stiff_disturb = 30000;                                          % (N/m) The value at which the ground stiffness will be set to during the perturbation
 stiff_default = k_g_A;                                          % The default value at which the ground stiffness will be set to after the perturbation
 %================================================================================================%
 %% Sec.(3) - Defining Threshold values for Equality Conditions for Gait Event Detection
@@ -180,7 +183,7 @@ while(steps < des_steps)                                        % While loop exe
     % the perturbation.
     if steps == step_disturb + 1                                % Step where the leg on soft terrain in now in support
         %k_A now corresponds to the leg stiffness of the leg in support which is in on the soft terrain
-        k_A = un(3)*11;                                         % Apply high stiffness gain to the latest output of the LQR gain
+        k_A = un(3)*7.452;                                         % Apply high stiffness gain to the latest output of the LQR gain
         k_B = un(3);                                            % Apply default stiffness for the second leg about to step on the rigid terrain
     else
         k_A = un(3);                                            % Change leg stiffness for both legs according to the LQR

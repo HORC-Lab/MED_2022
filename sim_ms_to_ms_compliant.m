@@ -164,7 +164,7 @@ while(steps < des_steps)                                            % Outer loop
     y_c_dot_MS = sol(MS_frame,7)*sin( sol(MS_frame,3) )*cos( sol(MS_frame,4) ) +...
         sol(MS_frame,2)*cos( sol(MS_frame,3) )*sol(MS_frame,8)*cos( sol(MS_frame,4) ) +...
         (-1)*sol(MS_frame,2)*sin( sol(MS_frame,3) )*sin( sol(MS_frame,4) )*sol(MS_frame,9);
-    x_slice = [x_c_MS-x_A_f y_c_MS-y_A_f z_c(MS_frame)-sol(MS_frame,1) x_c_dot_MS y_c_dot_MS];
+    x_slice = [x_c_MS-x_A_f y_c_MS-y_A_f z_c(MS_frame) x_c_dot_MS y_c_dot_MS];
     if steps == des_steps                                           % If the desired number of steps has been reached, return the MS state
         return;
     end
