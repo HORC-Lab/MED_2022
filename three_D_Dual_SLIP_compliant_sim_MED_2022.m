@@ -23,8 +23,7 @@
 
 % NOTE:
 % For more information please refer to the following paper:
-% 
-Karakasis, Chrysostomos, Ioannis Poulakakis, and Panagiotis Artemiadis. 
+% Karakasis, Chrysostomos, Ioannis Poulakakis, and Panagiotis Artemiadis. 
 % "Robust Dynamic Walking for a 3D Dual-SLIP Model under One-Step Unilateral Stiffness Perturbations: Towards Bipedal Locomotion over Compliant Terrain." arXiv preprint arXiv:2203.07471 (2022).
 
 % Last Update: 3/22/2022
