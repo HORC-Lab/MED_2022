@@ -9,6 +9,6 @@ The main code is located in "three_D_Dual_SLIP_compliant_sim_MED_2022.m". The re
 
 For more information please refer to the following paper:
 
-**[Karakasis, Chrysostomos, Ioannis Poulakakis, and Panagiotis Artemiadis. "Robust Dynamic Walking for a 3D Dual-SLIP Model under One-Step Unilateral Stiffness Perturbations: Towards Bipedal Locomotion over Compliant Terrain." arXiv preprint arXiv:2203.07471 (2022).](https://arxiv.org/abs/2203.07471)**
+**[C. Karakasis, I. Poulakakis and P. Artemiadis, "Robust Dynamic Walking for a 3D Dual-SLIP Model under One-Step Unilateral Stiffness Perturbations: Towards Bipedal Locomotion over Compliant Terrain," 2022 30th Mediterranean Conference on Control and Automation (MED), Vouliagmeni, Greece, 2022, pp. 969-975, doi: 10.1109/MED54222.2022.9837236.](https://ieeexplore.ieee.org/abstract/document/9837236/)**
 
 ![perturbation_screenshots_90kNm_final](https://user-images.githubusercontent.com/95447396/159397608-f42770cb-daae-45e7-968f-e54667598d74.png)
